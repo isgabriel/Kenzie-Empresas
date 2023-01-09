@@ -1,0 +1,93 @@
+:root {
+    /* Colors */
+    --brand1: #4200ff;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --error-color: #ce4646;
+    --success-color: #4ba036;
+
+    /* Font weight */
+    --bold: 700;
+    --semi-bold: 600;
+    --medium: 500;
+    --regular: 400;
+    --light: 300;
+    --extra-light: 200;
+
+    /* Font sizes */
+    --btnHeader-size: 1.125rem;
+}
+button {
+    font-family: "Inter", sans-serif;
+}
+
+/* header de todas as páginas */
+.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+}
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+
+    padding-top: 1.5625rem;
+    padding-bottom: 1.25rem;
+}
+.company__div {
+    display: flex;
+    gap: 0.625rem;
+
+    padding-left: 1.6875rem;
+}
+.company__div--name {
+    font-weight: var(--bold);
+}
+.navbar__menuMobile {
+    /* padding-top: 1.5625rem; */
+    /* padding-right: 0.8125rem; */
+}
+.btn__header {
+    background-color: transparent;
+
+    padding: 0.8125rem 2.8125rem;
+
+    font-weight: var(--bold);
+    font-size: var(--btnHeader-size);
+}
+.btn__div {
+    display: none;
+}
+.btn__div--login {
+    border: 1px solid var(--brand1);
+
+    color: var(--brand1);
+}
+.btn__div--signUp {
+    border: 1px solid var(--brand1);
+    background-color: var(--brand1);
+    color: var(--white-color);
+}
+
+@media (min-width: 769px) {
+    .navbar__container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    /* .company__div {
+        padding-bottom: 1rem;
+    } */
+    .navbar__menuMobile {
+        display: none;
+    }
+    .btn__div {
+        display: flex;
+        gap: 0.6875rem;
+    }
+}
