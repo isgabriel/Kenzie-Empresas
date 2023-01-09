@@ -28,30 +28,33 @@
     </head>
     <body>
         <header class="header__container">
-            <nav class="navbar__container">
-                <div class="company__div">
+            <nav class="navbar">
+                <div class="navbar__container">
+                    <div class="company__div">
+                        <img
+                            src="./src/assets/purple-circle.svg"
+                            alt="company-icon-purple"
+                            class="company__div--icon"
+                        />
+                        <p class="company__div--name">Kenzie Empresas</p>
+                    </div>
+
                     <img
-                        src="../assets/purple-circle.svg"
-                        alt="company-icon-purple"
-                        class="company__div--icon"
+                        src="../assets/menu-mobile.svg"
+                        alt="menu-expand-or-close-icon"
+                        class="navbar__menuMobile"
                     />
-                    <p class="company__div--name">Kenzie Empresas</p>
                 </div>
 
-                <img
-                    src="./src/assets/menu-mobile.svg"
-                    alt="menu-expand-icon"
-                    class="navbar__menuMobile"
-                />
-
                 <div class="btn__div">
-                    <button class="btn__header btn__div--login">Login</button>
-                    <button class="btn__header btn__div--signUp">
+                    <button class="btn__header btn__div--first">Home</button>
+                    <button class="btn__header btn__div--second">
                         Cadastro
                     </button>
                 </div>
             </nav>
         </header>
         <hr />
+        <script src="./src/scripts/index.js"></script>
     </body>
 </html>

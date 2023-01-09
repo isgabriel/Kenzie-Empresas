@@ -22,13 +22,14 @@ button {
 }
 
 /* header de todas as páginas */
+.navbar {
+    width: 100vw;
+}
 .header__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    width: 100vw;
 }
 .navbar__container {
     display: flex;
@@ -64,18 +65,44 @@ button {
 .btn__div {
     display: none;
 }
-.btn__div--login {
+.btn__div--first {
     border: 1px solid var(--brand1);
 
     color: var(--brand1);
+
+    cursor: pointer;
 }
-.btn__div--signUp {
+.btn__div--second {
     border: 1px solid var(--brand1);
+
     background-color: var(--brand1);
+
     color: var(--white-color);
+
+    cursor: pointer;
+}
+.changeNav {
+    display: flex;
+    flex-direction: column;
+}
+.openMenuBtn {
+    display: flex;
+    justify-content: center;
+
+    gap: 0.75rem;
 }
 
 @media (min-width: 769px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 90%;
+
+        padding-top: 1.5625rem;
+        padding-bottom: 1.25rem;
+    }
     .navbar__container {
         padding-top: 1rem;
         padding-bottom: 1rem;
