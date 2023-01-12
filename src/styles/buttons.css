@@ -1,0 +1,24 @@
+.btn__stats {
+    background-color: transparent;
+
+    padding: 0.8125rem 2.8125rem;
+
+    font-weight: var(--bold);
+    font-size: var(--btnHeader-size);
+}
+.transparentBtn {
+    border: 1px solid var(--brand1);
+
+    color: var(--brand1);
+
+    cursor: pointer;
+}
+.purpleBtn {
+    border: 1px solid var(--brand1);
+
+    background-color: var(--brand1);
+
+    color: var(--white-color);
+
+    cursor: pointer;
+}

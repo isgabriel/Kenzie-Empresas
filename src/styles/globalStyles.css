@@ -5,6 +5,7 @@
     --white-color: #ffffff;
     --error-color: #ce4646;
     --success-color: #4ba036;
+    --setor-color: rgba(177, 175, 175, 0.1);
 
     /* Font weight */
     --bold: 700;
@@ -21,100 +22,6 @@ button {
     font-family: "Inter", sans-serif;
 }
 
-/* header de todas as páginas */
-.navbar {
-    width: 100vw;
-}
-.header__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.navbar__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 90%;
-
-    padding-top: 1.5625rem;
-    padding-bottom: 1.25rem;
-}
-.company__div {
-    display: flex;
-    gap: 0.625rem;
-
-    padding-left: 1.6875rem;
-}
-.company__div--name {
-    font-weight: var(--bold);
-}
-.navbar__menuMobile {
-    /* padding-top: 1.5625rem; */
-    /* padding-right: 0.8125rem; */
-}
-.btn__header {
-    background-color: transparent;
-
-    padding: 0.8125rem 2.8125rem;
-
-    font-weight: var(--bold);
-    font-size: var(--btnHeader-size);
-}
-.btn__div {
+.hide {
     display: none;
-}
-.btn__div--first {
-    border: 1px solid var(--brand1);
-
-    color: var(--brand1);
-
-    cursor: pointer;
-}
-.btn__div--second {
-    border: 1px solid var(--brand1);
-
-    background-color: var(--brand1);
-
-    color: var(--white-color);
-
-    cursor: pointer;
-}
-.changeNav {
-    display: flex;
-    flex-direction: column;
-}
-.openMenuBtn {
-    display: flex;
-    justify-content: center;
-
-    gap: 0.75rem;
-}
-
-@media (min-width: 769px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        width: 90%;
-
-        padding-top: 1.5625rem;
-        padding-bottom: 1.25rem;
-    }
-    .navbar__container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-    /* .company__div {
-        padding-bottom: 1rem;
-    } */
-    .navbar__menuMobile {
-        display: none;
-    }
-    .btn__div {
-        display: flex;
-        gap: 0.6875rem;
-    }
 }

@@ -16,6 +16,9 @@
         <!-- CSS Links -->
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/globalStyles.css" />
+        <link rel="stylesheet" href="../styles/toast.css" />
+        <link rel="stylesheet" href="../styles/header.css" />
+        <link rel="stylesheet" href="../styles/buttons.css" />
         <link rel="stylesheet" href="../styles/index.css" />
 
         <!-- Favicon -->
@@ -32,7 +35,7 @@
                 <div class="navbar__container">
                     <div class="company__div">
                         <img
-                            src="./src/assets/purple-circle.svg"
+                            src="../assets/purple-circle.svg"
                             alt="company-icon-purple"
                             class="company__div--icon"
                         />
@@ -47,11 +50,29 @@
                 </div>
 
                 <div class="btn__div">
-                    <button class="btn__header btn__div--first">Logout</button>
+                    <button class="btn__stats transparentBtn logoutBtn">
+                        Logout
+                    </button>
                 </div>
             </nav>
         </header>
-        <hr />
-        <script src="./src/scripts/index.js"></script>
+        <main class="main__container">
+            <div class="main__header">
+                <h2>Departamentos</h2>
+                <select id="select" class="main__select">
+                    <option class="select__option">Selecionar empresa</option>
+                </select>
+                <button id="create-departament" class="main__header--createBtn">
+                    <img src="../assets/+-icon.svg" alt="" /> Criar
+                </button>
+            </div>
+            <ul class="departament-container list__departments"></ul>
+            <div class="usersTitle__div">
+                <h2 class="usersTitle">Usuários cadastrados</h2>
+            </div>
+            <ul class="departament-container list__users"></ul>
+        </main>
+        <script src="../scripts/headerMenu.js"></script>
+        <script type="module" src="../scripts/admDash.js"></script>
     </body>
 </html>

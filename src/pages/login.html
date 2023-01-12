@@ -16,7 +16,10 @@
         <!-- CSS Links -->
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/globalStyles.css" />
-        <link rel="stylesheet" href="../styles/index.css" />
+        <link rel="stylesheet" href="../styles/header.css" />
+        <link rel="stylesheet" href="../styles/buttons.css" />
+        <link rel="stylesheet" href="../styles/loginRegister.css" />
+        <link rel="stylesheet" href="../styles/toast.css" />
 
         <!-- Favicon -->
         <link
@@ -32,7 +35,7 @@
                 <div class="navbar__container">
                     <div class="company__div">
                         <img
-                            src="./src/assets/purple-circle.svg"
+                            src="../assets/purple-circle.svg"
                             alt="company-icon-purple"
                             class="company__div--icon"
                         />
@@ -47,14 +50,50 @@
                 </div>
 
                 <div class="btn__div">
-                    <button class="btn__header btn__div--first">Home</button>
-                    <button class="btn__header btn__div--second">
+                    <button class="btn__stats transparentBtn homeBtn">
+                        Home
+                    </button>
+                    <button class="btn__stats signUpBtn purpleBtn">
                         Cadastro
                     </button>
                 </div>
             </nav>
         </header>
-        <hr />
-        <script src="./src/scripts/index.js"></script>
+
+        <main class="main__container">
+            <form action="" id="login-form" class="main__form register-form">
+                <h2 class="main__form--title">Login</h2>
+                <p class="main__form--description">
+                    Preencha os campos para realizar login
+                </p>
+                <input
+                    type="email"
+                    name="email"
+                    class="form__input--email"
+                    placeholder="Seu e-mail"
+                    required
+                />
+                <input
+                    type="password"
+                    name="password"
+                    class="form__input--password"
+                    placeholder="Sua senha"
+                    required
+                />
+
+                <button class="login btn__stats purpleBtn" type="submit">
+                    Login
+                </button>
+                <p class="or">OU</p>
+                <button
+                    class="main__form--signUpBtn btn__stats transparentBtn signUpBtn"
+                    type="button"
+                >
+                    Cadastre-se
+                </button>
+            </form>
+        </main>
+        <script src="../scripts/headerMenu.js"></script>
+        <script type="module" src="../scripts/login.js"></script>
     </body>
 </html>

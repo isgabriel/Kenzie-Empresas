@@ -16,6 +16,8 @@
         <!-- CSS Links -->
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/globalStyles.css" />
+        <link rel="stylesheet" href="../styles/header.css" />
+        <link rel="stylesheet" href="../styles/buttons.css" />
         <link rel="stylesheet" href="../styles/index.css" />
 
         <!-- Favicon -->
@@ -32,7 +34,7 @@
                 <div class="navbar__container">
                     <div class="company__div">
                         <img
-                            src="./src/assets/purple-circle.svg"
+                            src="../assets/purple-circle.svg"
                             alt="company-icon-purple"
                             class="company__div--icon"
                         />
@@ -47,11 +49,17 @@
                 </div>
 
                 <div class="btn__div">
-                    <button class="btn__header btn__div--first">Logout</button>
+                    <button class="btn__stats transparentBtn homeBtn logoutBtn">
+                        Logout
+                    </button>
                 </div>
             </nav>
         </header>
-        <hr />
-        <script src="./src/scripts/index.js"></script>
+        <main class="main__container">
+            <section class="main__userData"></section>
+            <section class="main__employeeData"></section>
+        </main>
+        <script src="../scripts/headerMenu.js"></script>
+        <script type="module" src="../scripts/userDash.js"></script>
     </body>
 </html>

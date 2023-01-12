@@ -91,4 +91,5 @@ video {
     font: inherit;
     vertical-align: baseline;
     font-family: "Inter", sans-serif;
+    list-style: none;
 }
