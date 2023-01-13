@@ -88,7 +88,6 @@
     border: 1px solid var(--brand1);
 }
 .list__item > h3 {
-    /* padding-top: 12px; */
     font-weight: var(--bold);
 }
 .list__item > p {

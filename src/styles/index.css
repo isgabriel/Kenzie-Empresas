@@ -16,8 +16,6 @@
     max-width: 95%;
 }
 .divSector {
-    /* background-color: var(--brand1); */
-
     display: flex;
 }
 .setor__divHeader {

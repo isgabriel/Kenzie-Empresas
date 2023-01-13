@@ -13,10 +13,6 @@
     animation: toast 3000ms forwards;
     z-index: 5;
 }
-/* .hide {
-    display: none;
-} */
-
 @keyframes toast {
     0% {
         bottom: 0%;

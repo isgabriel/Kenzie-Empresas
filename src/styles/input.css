@@ -23,8 +23,6 @@ input:focus {
 select {
     cursor: pointer;
     appearance: none;
-    /* -webkit-appearance: none;
-    -moz-appearance: none; */
 
     border: 1px solid rgba(0, 0, 0, 0.2);
 
@@ -37,11 +35,8 @@ select {
     font-size: 1.125rem;
 
     color: rgba(0, 0, 0, 0.6);
-    /* border: 1px solid rgba(0, 0, 0, 0); */
 }
 
-/* input:hover,
-input:focus */
 select:focus,
 select:hover {
     outline-color: var(--brand1);

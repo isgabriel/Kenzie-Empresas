@@ -18,7 +18,6 @@ body {
 
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -26,18 +25,14 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* margin-top: 1.75rem; */
     padding: 2.5rem 1.25rem;
 
     background-color: rgba(255, 255, 255, 0.95);
 
     width: 95%;
     max-width: 100%;
-    margin-bottom: 90px;
 
-    /* padding-left: 1.25rem;
-    padding-right: 0.9375rem;
-    padding-bottom: 2.5rem; */
+    margin-bottom: 90px;
 }
 .main__form--title {
     font-size: 2.5rem;
@@ -48,25 +43,8 @@ body {
     font-size: 1rem;
     font-weight: var(--medium);
 
-    /* margin-top: 0.5rem; */
     margin-bottom: 1rem;
 }
-/* input {
-    height: 3.25rem;
-    padding-left: 1.25rem;
-    font-size: 1.125rem;
-
-    border: 1px solid rgba(0, 0, 0, 0.2);
-} */
-/* .form__input--name {
-    margin-bottom: 0.8125rem;
-}
-.form__input--email {
-    margin-bottom: 0.8125rem;
-}
-.form__input--password {
-    margin-bottom: 0.8125rem;
-} */
 .ls-custom-select > img {
     position: relative;
 

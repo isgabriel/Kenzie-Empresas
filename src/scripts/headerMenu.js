@@ -3,7 +3,6 @@ function openMenuPages() {
     const navBar = document.querySelector(".navbar");
     const btnMenu = document.querySelector(".navbar__menuMobile");
     const divBtns = document.querySelector(".btn__div");
-    // ../../src/assets/menu-mobile.svg (caminho da imagem que deve ser alterada com  click)
 
     btnMenu.src = "../../src/assets/menu-mobile.svg";
     btnMenu.addEventListener("click", () => {

@@ -2,7 +2,6 @@ import {
     patchEditUser,
     getUserData,
     getCoWork,
-    // getDepartamentsId,
     getAllDeps,
     getAllCompanys,
 } from "./requests.js";
@@ -71,7 +70,6 @@ async function renderUserData() {
     });
 
     divParags.append(email, userExp, kindOfWork);
-    // divImg.appendChild(edit);
     userFoot.append(divParags);
     userData.append(h2, userFoot, edit);
 }
