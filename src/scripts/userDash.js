@@ -101,7 +101,7 @@ function editUserForm() {
     let body = {};
 
     button.addEventListener("click", async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         body = {
             username: name.value,
