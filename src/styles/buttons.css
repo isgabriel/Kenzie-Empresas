@@ -22,3 +22,22 @@
 
     cursor: pointer;
 }
+.greenBtn {
+    background-color: #4ba036;
+    color: var(--white-color);
+    border: none;
+    margin-bottom: 20px;
+    padding: 0.8125rem 2.8125rem;
+    font-weight: var(--bold);
+    font-size: 1.125rem;
+    cursor: pointer;
+}
+.redBtn {
+    background-color: var(--white-color);
+    color: var(--red-color);
+    border: 1px solid var(--red-color);
+    padding: 0.8125rem 2.8125rem;
+    margin-bottom: 20px;
+    font-size: 1.125rem;
+    cursor: pointer;
+}

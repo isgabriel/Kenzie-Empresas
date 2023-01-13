@@ -19,7 +19,9 @@
         <link rel="stylesheet" href="../styles/toast.css" />
         <link rel="stylesheet" href="../styles/header.css" />
         <link rel="stylesheet" href="../styles/buttons.css" />
-        <link rel="stylesheet" href="../styles/index.css" />
+        <link rel="stylesheet" href="../styles/input.css" />
+        <link rel="stylesheet" href="../styles/admDash.css" />
+        <link rel="stylesheet" href="../styles/modal.css" />
 
         <!-- Favicon -->
         <link
@@ -59,15 +61,27 @@
         <main class="main__container">
             <div class="main__header">
                 <h2>Departamentos</h2>
-                <select id="select" class="main__select">
-                    <option class="select__option">Selecionar empresa</option>
-                </select>
-                <button id="create-departament" class="main__header--createBtn">
+                <div class="selectCompany">
+                    <select id="select" class="main__select">
+                        <option class="select__option">
+                            Selecionar empresa
+                        </option>
+                    </select>
+                    <img
+                        src="../assets/arrow-down.svg"
+                        alt=""
+                        class="select__img"
+                    />
+                </div>
+                <button
+                    id="create-departament"
+                    class="main__header--createBtn purpleBtn btn__stats"
+                >
                     <img src="../assets/+-icon.svg" alt="" /> Criar
                 </button>
             </div>
             <ul class="departament-container list__departments"></ul>
-            <div class="usersTitle__div">
+            <div class="usersTitle__div main__header">
                 <h2 class="usersTitle">Usuários cadastrados</h2>
             </div>
             <ul class="departament-container list__users"></ul>

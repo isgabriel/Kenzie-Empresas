@@ -1,0 +1,134 @@
+.main__container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main__userData {
+    padding: 20px 21px 0 21px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    width: 80%;
+    max-width: 956px;
+}
+.main__userData > h2 {
+    font-size: 1.875rem;
+    font-weight: var(--bold);
+
+    margin-bottom: 11px;
+}
+.userFoot__div {
+    display: flex;
+    justify-content: space-between;
+}
+.userInfos__div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.main__userData > img {
+    position: relative;
+    left: 90%;
+    bottom: 115px;
+}
+.main__employeeData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 55px;
+    margin-bottom: 35px;
+
+    width: 80%;
+    max-width: 1000px;
+    background-color: var(--grey-light-color);
+}
+.main__employeeData--title {
+    padding: 20px 21px 20px 21px;
+
+    font-size: 1.5rem;
+    font-weight: var(--bold);
+    text-align: center;
+
+    background-color: var(--brand1);
+    color: var(--white-color);
+
+    width: 100%;
+    max-width: 958px;
+}
+.list__employees {
+    background-color: var(--grey-light-color);
+
+    padding: 50px 21px;
+
+    width: 100%;
+    max-width: 958px;
+
+    max-height: 45vh;
+
+    overflow-y: scroll;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 54px;
+}
+.list__item {
+    background-color: var(--white-color);
+
+    font-size: 0.9375rem;
+
+    padding: 14px 23px;
+
+    width: 90%;
+
+    border: 1px solid var(--brand1);
+}
+.list__item > h3 {
+    /* padding-top: 12px; */
+    font-weight: var(--bold);
+}
+.list__item > p {
+    padding-top: 0.875rem;
+}
+
+.notHired {
+    background-color: var(--grey-light-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    width: 100%;
+    max-width: 1000px;
+    height: 50vh;
+
+    margin-top: 44px;
+}
+.notHired > p {
+    font-size: 2.5rem;
+    font-weight: var(--bold);
+}
+
+@media (min-width: 500px) {
+    .list__item {
+        max-width: 30%;
+    }
+}
+@media (min-width: 769px) {
+    .main__userData > img {
+        bottom: 41px;
+        left: 95%;
+    }
+    .userInfos__div {
+        flex-direction: row;
+        gap: 5rem;
+
+        width: 763px;
+    }
+}

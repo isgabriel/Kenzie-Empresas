@@ -39,8 +39,11 @@ async function renderUserData() {
     const userFoot = document.createElement("div");
     userFoot.classList.add("userFoot__div");
 
+    const divParags = document.createElement("div");
+    divParags.classList.add("userInfos__div");
+
     const email = document.createElement("p");
-    email.innerText = userDataRequest.email;
+    email.innerText = "Email: " + userDataRequest.email;
 
     const userExp = document.createElement("p");
     if (userDataRequest.professional_level !== null) {
@@ -56,6 +59,9 @@ async function renderUserData() {
         kindOfWork.classList = "hide";
     }
 
+    const divImg = document.createElement("div");
+    divImg.classList.add("imgDiv");
+
     const edit = document.createElement("img");
     edit.src = "../assets/edit-icon-purple.svg";
     edit.id = "edit";
@@ -64,8 +70,10 @@ async function renderUserData() {
         modalBg(editUserForm());
     });
 
-    userFoot.append(email, userExp, kindOfWork, edit);
-    userData.append(h2, userFoot);
+    divParags.append(email, userExp, kindOfWork);
+    // divImg.appendChild(edit);
+    userFoot.append(divParags);
+    userData.append(h2, userFoot, edit);
 }
 renderUserData();
 
@@ -90,6 +98,7 @@ function editUserForm() {
     const button = document.createElement("button");
     button.innerText = "Editar perfil";
     button.type = "submit";
+    button.classList.add("purpleBtn", "modal__btn--edit");
 
     let body = {};
 
@@ -128,15 +137,15 @@ async function renderUserCoWork() {
         employeeData.innerHTML = "";
 
         const h2 = document.createElement("h2");
-        h2.classList.add("");
+        h2.classList.add("main__employeeData--title");
         h2.innerText = `${allCompaniesFind.name} - ${findDepName.name}`;
 
         const ul = document.createElement("ul");
-        ul.classList.add("");
+        ul.classList.add("list__employees");
 
         coWorks[0].users.forEach((element) => {
             const li = document.createElement("li");
-            li.classList.add("");
+            li.classList.add("list__item");
 
             const h3 = document.createElement("h3");
             h3.innerText = element.username;
@@ -152,7 +161,7 @@ async function renderUserCoWork() {
     } else {
         const p = document.createElement("p");
         p.innerText = "Você ainda não foi contratado";
-        employeeData.classList = "";
+        employeeData.classList = "notHired";
         employeeData.appendChild(p);
     }
 }

@@ -5,6 +5,7 @@
     align-items: center;
 
     margin-top: 1.375rem;
+    max-width: 1200px;
 }
 .main__container--image {
     display: none;
@@ -14,7 +15,13 @@
     min-width: 95%;
     max-width: 95%;
 }
+.divSector {
+    /* background-color: var(--brand1); */
+
+    display: flex;
+}
 .setor__divHeader {
+    min-width: 100%;
     background-color: var(--brand1);
     color: var(--white-color);
 
@@ -25,19 +32,23 @@
     padding: 1rem 0;
 
     width: 100%;
+
     text-align: center;
     font-size: 1.25rem;
+
+    appearance: none;
 }
 .setor__divHeader--title {
     font-size: 1.25rem;
     font-weight: var(--regular);
-    /* border: none; */
+    background-color: var(--white-color);
+    color: black;
 }
 
-/* .setor__divHeader--image {
-    position: absolute;
-    right: 5%;
-} */
+.setor__divHeader--image {
+    position: relative;
+    right: 40px;
+}
 
 .setor__list {
     box-shadow: 2px 2px 5px 2px rgba(66, 0, 255, 0.2);
@@ -109,19 +120,12 @@
     }
     .setor__container {
         height: 740px;
-        /* width: 45%; */
-        /* max-width: 45%; */
+        max-width: 45%;
         min-width: 45%;
     }
     .setor__divHeader {
         min-width: 450px;
-        /* position: fixed;
-        z-index: 10; */
     }
-    /* .setor__divHeader--image {
-        position: relative;
-        left: 30%;
-    } */
     .setor__list {
         overflow-x: hidden;
         overflow-y: scroll;
@@ -142,17 +146,4 @@
     .subDivInfos__btn {
         max-width: 6rem;
     }
-}
-
-/* scroll mouse */
-::-webkit-scrollbar {
-    width: 12px;
-    background: transparent;
-    height: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 14px 14px var(--brand1);
-    border: solid 4px transparent;
-    border-radius: 14px;
 }

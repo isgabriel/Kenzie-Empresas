@@ -46,7 +46,7 @@ async function departamentRender() {
         const departmentFilter = allDep.filter(
             (element) => element.companies.name === select.value
         );
-        if (select.value === "Selecionar empresas") {
+        if (select.value === "Selecionar empresa") {
             cardRender(allDep);
         } else {
             cardRender(departmentFilter);
@@ -110,11 +110,11 @@ function cardMaker(element) {
 
 async function hireUserModal(id) {
     let allUsers = await getAllEmployees();
-    let departamentsId = await getDepartamentsId();
+    let departamentsId = await getDepartamentsId(id);
     let usersOutOfWork = await getOutOfWork();
 
     const form = document.createElement("form");
-    form.classList.add("form__hireUser");
+    form.classList.add("form__modal");
 
     const title = document.createElement("h2");
     title.innerText = departamentsId[0].name;
@@ -125,16 +125,27 @@ async function hireUserModal(id) {
     const departamentDescription = document.createElement("h3");
     departamentDescription.innerText = departamentsId[0].description;
 
+    const divSelectUser = document.createElement("div");
+    divSelectUser.classList.add("divModalSelectCompany");
+
     const select = document.createElement("select");
+    select.classList.add("modal__select");
 
     usersOutOfWork.forEach((element) => {
         const option = document.createElement("option");
+        option.classList.add("sla");
         option.innerText = element.username;
         option.value = element.uuid;
         select.appendChild(option);
     });
 
-    div1.append(departamentDescription, select);
+    const imgArrow = document.createElement("img");
+    imgArrow.classList.add("select__img");
+    imgArrow.src = "../assets/arrow-down.svg";
+
+    divSelectUser.append(select, imgArrow);
+
+    div1.append(departamentDescription, divSelectUser);
 
     const div2 = document.createElement("div");
     div2.classList.add("hireUser__div2");
@@ -143,7 +154,7 @@ async function hireUserModal(id) {
     companyName.innerText = departamentsId[0].companies.name;
 
     const employeeList = document.createElement("ul");
-    employeeList.classList.add("employee__list");
+    employeeList.classList.add("departament-container", "ulHireOrDismiss");
 
     let body = {};
 
@@ -156,6 +167,7 @@ async function hireUserModal(id) {
     const hire = document.createElement("button");
     hire.type = "button";
     hire.innerText = "Contratar";
+    hire.classList.add("greenBtn", "hireBtnModal");
     hire.addEventListener("click", async (e) => {
         e.preventDefault();
 
@@ -181,6 +193,7 @@ async function hireUserModal(id) {
         );
         filter2.map((element) => {
             const card = document.createElement("li");
+            card.classList.add("list__item--departDesc");
 
             const cardTitle = document.createElement("h3");
             cardTitle.innerText = element.username;
@@ -195,6 +208,7 @@ async function hireUserModal(id) {
             buttonDiv.classList.add("item__btnDiv");
 
             const dismiss = document.createElement("button");
+            dismiss.classList.add("redBtn", "btn__stats");
             dismiss.innerText = "Desligar";
             dismiss.type = "submit";
             dismiss.addEventListener("click", async (e) => {
@@ -231,6 +245,7 @@ function editDepartamentModal(id, element) {
     let body = {};
 
     const button = document.createElement("button");
+    button.classList.add("purpleBtn", "btn__stats");
     button.innerText = "Salvar alterações";
     button.type = "submit";
     button.addEventListener("click", async () => {
@@ -247,12 +262,16 @@ function editDepartamentModal(id, element) {
 
 function deleteDepartamentModal(name, id) {
     const departmentDelete = document.createElement("form");
-    departmentDelete.classList.add("delete__department");
+    departmentDelete.classList.add("form__modal");
 
     const title = document.createElement("h2");
-    title.innerText = `Realmente deseja deletar o departamento ${name} e demitir seus funcionários?`;
+    title.innerText =
+        "Realmente deseja deletar o departamento " +
+        name +
+        " e demitir seus funcionários?";
 
     const button = document.createElement("button");
+    button.classList.add("greenBtn");
     button.type = "submit";
     button.innerText = "confirmar";
     button.addEventListener("click", async () => {
@@ -282,7 +301,7 @@ function cardUserRender(array) {
 async function cardUserMaker(element) {
     const departmentId = await getAllDepartaments();
     const card = document.createElement("li");
-    card.classList.add("");
+    card.classList.add("list__item--departDesc");
 
     const userName = document.createElement("h4");
     userName.innerText = element.username;
@@ -292,7 +311,7 @@ async function cardUserMaker(element) {
 
     const userCompany = document.createElement("span");
     if (element.department_uuid === null) {
-        userCompany.innerText("Não empregado");
+        userCompany.innerText = "Não empregado";
     } else {
         userCompany.id = element.department_uuid;
 
@@ -303,10 +322,10 @@ async function cardUserMaker(element) {
     }
 
     const figureContainer = document.createElement("figure");
-    figureContainer.classList.add("");
+    figureContainer.classList.add("images__container");
 
     const pencilIcon = document.createElement("img");
-    pencilIcon.src = "../assets/edit-icon-black.svg";
+    pencilIcon.src = "../assets/edit-icon-purple.svg";
     pencilIcon.addEventListener("click", async () => {
         modalBg(await editUserModal(element.uuid));
     });
@@ -325,12 +344,13 @@ async function cardUserMaker(element) {
 
 function deleteUserModal(nome, id) {
     const departmentDelete = document.createElement("form");
-    departmentDelete.classList.add("");
+    departmentDelete.classList.add("form__modal");
 
     const title = document.createElement("h2");
     title.innerText = `Realmente deseja remover o usuário ${nome}?`;
 
     const button = document.createElement("button");
+    button.classList.add("greenBtn");
     button.type = "submit";
     button.innerText = "Deletar";
     button.addEventListener("click", async () => {
@@ -343,12 +363,20 @@ function deleteUserModal(nome, id) {
 
 function editUserModal(id) {
     const form = document.createElement("form");
-    form.classList.add("");
+    form.classList.add("form__modal");
 
     const h2 = document.createElement("h2");
     h2.innerText = "Editar usuário";
 
+    const divKindaWork = document.createElement("div");
+    divKindaWork.classList.add("divModalSelectCompany");
+
+    const arrowImg2 = document.createElement("img");
+    arrowImg2.src = "../assets/arrow-down.svg";
+    arrowImg2.classList.add("select__img");
+
     const kindOfWord = document.createElement("select");
+    kindOfWord.classList.add("modal__select");
 
     const option0 = document.createElement("option");
     option0.innerText = "Selecionar modalidade de trabalho";
@@ -368,8 +396,17 @@ function editUserModal(id) {
     option3.value = "presencial";
 
     kindOfWord.append(option0, option1, option2, option3);
+    divKindaWork.append(kindOfWord, arrowImg2);
+
+    const divProfLevel = document.createElement("div");
+    divProfLevel.classList.add("divModalSelectCompany");
+
+    const arrowImg = document.createElement("img");
+    arrowImg.src = "../assets/arrow-down.svg";
+    arrowImg.classList.add("select__img");
 
     const userExp = document.createElement("select");
+    userExp.classList.add("modal__select");
 
     const optionZero = document.createElement("option");
     optionZero.innerText = "Selecionar nível profissional";
@@ -395,6 +432,7 @@ function editUserModal(id) {
     userExp.append(optionZero, estagio, junior, pleno, senior);
 
     const button = document.createElement("button");
+    button.classList.add("purpleBtn", "btn__stats");
     button.innerText = "Editar";
     button.type = "submit";
 
@@ -409,7 +447,8 @@ function editUserModal(id) {
         await adminEditUser(id, body);
     });
 
-    form.append(h2, kindOfWord, userExp, button);
+    divProfLevel.append(userExp, arrowImg);
+    form.append(h2, divKindaWork, divProfLevel, button);
     return form;
 }
 
@@ -429,7 +468,7 @@ async function createDepartamentForm() {
     title.innerText = "Criar departamento";
 
     const form = document.createElement("form");
-    form.classList.add("");
+    form.classList.add("form__newDepart", "form__modal");
 
     const departamentName = document.createElement("input");
     departamentName.placeholder = "Nome do departamento";
@@ -437,12 +476,21 @@ async function createDepartamentForm() {
     const departamentDesc = document.createElement("input");
     departamentDesc.placeholder = "Descrição";
 
+    const divSelectCompany = document.createElement("div");
+    divSelectCompany.classList.add("divModalSelectCompany");
+
     const select = document.createElement("select");
     select.id = "modal-form-select";
+    select.classList.add("modal__select");
+
+    const arrowDown = document.createElement("img");
+    arrowDown.src = "../assets/arrow-down.svg";
+    arrowDown.classList.add("select__img");
 
     allCompanys.forEach((element) => {
         const option = document.createElement("option");
         option.innerText = element.name;
+        option.classList.add("select__option");
         option.value = element.uuid;
         select.appendChild(option);
     });
@@ -450,6 +498,7 @@ async function createDepartamentForm() {
     let body = {};
 
     const submitBtn = document.createElement("button");
+    submitBtn.classList.add("purpleBtn", "modal__btn--edit");
     submitBtn.innerText = "Criar o departamento";
     submitBtn.type = "submit";
     submitBtn.addEventListener("click", async () => {
@@ -462,7 +511,14 @@ async function createDepartamentForm() {
         await postCreateDepartament(body);
     });
 
-    form.append(title, departamentName, departamentDesc, select, submitBtn);
+    divSelectCompany.append(select, arrowDown);
+    form.append(
+        title,
+        departamentName,
+        departamentDesc,
+        divSelectCompany,
+        submitBtn
+    );
     return form;
 }
 
