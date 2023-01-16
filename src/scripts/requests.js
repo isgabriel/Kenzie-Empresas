@@ -62,26 +62,27 @@ export async function postLogin(body) {
 
 export async function postRegister(body) {
     try {
-        const request = await fetch(baseUrl + "auth/register", {
+        const request = await fetch(`${baseUrl}auth/register`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "Application/json" },
             body: JSON.stringify(body),
         });
 
         const response = await request.json();
         if (response) {
+            console.log(response);
             toast(
-                "success",
-                "Usuário criado com sucesso!",
-                "Você será redirecionado em breve."
+                "sucess",
+                "Usuário criado com sucesso!!!",
+                "Você será redirecionado em breve, aguarde"
             );
             setTimeout(() => {
-                window.location.replace("../pages/login.html");
+                window.location.replace("../Pages/login.html");
             }, 2000);
         } else {
             toast(
                 "fail",
-                "Ocorreu um erro.",
+                "Algo deu errado",
                 "Verifique se todos os campos foram preenchidos"
             );
         }
@@ -89,12 +90,11 @@ export async function postRegister(body) {
         console.log(err);
         toast(
             "fail",
-            "Ocorreu um erro.",
+            "Algo deu errado",
             "Verifique se todos os campos foram preenchidos"
         );
     }
 }
-
 export async function getAllCompanys() {
     try {
         const request = await fetch(baseUrl + "companies");
