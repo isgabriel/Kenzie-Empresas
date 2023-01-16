@@ -64,7 +64,7 @@ export async function postRegister(body) {
     try {
         const request = await fetch(`${baseUrl}auth/register`, {
             method: "POST",
-            headers: { "Content-Type": "Application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
         });
 
@@ -73,11 +73,11 @@ export async function postRegister(body) {
             console.log(response);
             toast(
                 "sucess",
-                "Usuário criado com sucesso!!!",
-                "Você será redirecionado em breve, aguarde"
+                "Usuário criado com sucesso!!",
+                "Você será redirecionado para a página de login em breve."
             );
             setTimeout(() => {
-                window.location.replace("../Pages/login.html");
+                window.location.replace("../pages/login.html");
             }, 2000);
         } else {
             toast(
