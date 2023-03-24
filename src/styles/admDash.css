@@ -34,7 +34,6 @@
     padding-bottom: 4px;
 
     padding-left: 20%;
-    /* text-align: center; */
 }
 .select__img {
     position: relative;
@@ -119,7 +118,6 @@ span {
 .hireUser__div1 {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
 }
 .hireUser__div1 > div {
@@ -130,6 +128,15 @@ span {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.hireUser__div2 > p {
+    background-color: var(--brand1);
+    color: var(--white-color);
+
+    padding: 5px;
+    font-size: 12px;
+
+    border-radius: 3px;
 }
 .hireUser__div2 > button {
     margin-bottom: 0;
