@@ -77,6 +77,6 @@ Aqui estão as tecnologias usadas nesse projeto.
  
  ## Autores
  - <strong>Gabriel Fragoso Montenegro</strong>
- Por favor, siga o github e junte-se a nós! Obrigado pela visita! <3
+ <p>Por favor, siga o github e junte-se a nós! Obrigado pela visita! <3</p>
 
  
